@@ -123,9 +123,7 @@ ul {
     margin-top: 2rem;
 }
 
-/* ========================================
-   Glassmorphism & Utilities
-   ======================================== */
+
 .glass {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);

@@ -645,11 +645,59 @@ ul {
     font-weight: 600;
 }
 
-.project-content p {
+.project-description {
+    flex-grow: 1;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-description p {
     color: var(--text-muted);
     font-size: 0.95rem;
-    margin-bottom: 1rem;
-    flex-grow: 1;
+    margin-bottom: 0.8rem;
+}
+
+.more-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-out;
+}
+
+.more-content.expanded {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 0.5rem;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease-in;
+}
+
+.read-more-btn {
+    background: transparent;
+    border: none;
+    color: var(--accent-cyan);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.3rem;
+    padding: 0.2rem 0;
+    transition: var(--transition);
+    align-self: flex-start;
+    outline: none;
+}
+
+.read-more-btn:hover {
+    color: var(--accent-purple);
+    transform: translateX(3px);
+}
+
+.read-more-btn i {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
 }
 
 .tech-stack {
@@ -667,19 +715,34 @@ ul {
     border-radius: 12px;
 }
 
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: auto;
+}
+
 .btn-small {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
     font-size: 0.9rem;
     color: var(--text-main);
-    border-bottom: 1px solid var(--text-main);
-    padding-bottom: 2px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-weight: 500;
+    transition: var(--transition);
 }
 
 .btn-small:hover {
-    color: var(--accent-cyan);
+    color: white;
     border-color: var(--accent-cyan);
+    background: rgba(6, 182, 212, 0.1);
+    box-shadow: 0 0 15px var(--accent-cyan-glow);
+    transform: translateY(-2px);
 }
 
 

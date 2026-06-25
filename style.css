@@ -812,7 +812,7 @@ ul {
 
 .cert-card {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.5rem;
     padding: 1.5rem;
 }
@@ -853,6 +853,19 @@ ul {
     color: var(--text-muted);
     margin-top: 0.25rem;
     font-family: monospace;
+}
+
+.cert-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 0.8rem;
+}
+
+.btn-cert {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 6px;
 }
 
 .interest-tags {

@@ -358,7 +358,8 @@ ul {
     font-family: var(--font-heading);
     font-weight: 600;
     margin-bottom: 1.5rem;
-    height: 40px;
+    min-height: 40px;
+    height: auto;
 }
 
 .typing-text {

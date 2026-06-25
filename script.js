@@ -1,13 +1,19 @@
 
 const typingTextElement = document.getElementById('typing-text');
-const words = ["MCA Student", "Full Stack Developer", "Web Developer"];
+const words = [
+    "MCA Student ",
+    // " Full Stack Developer | AI & ML Learner",
+    "Full Stack Developer | AI & ML Enthusiast",
+    "Building Web Applications"
+    // & AI-Powered Solutions"
+];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 
 function typeEffect() {
     const currentWord = words[wordIndex];
-    
+
     if (isDeleting) {
         typingTextElement.textContent = currentWord.substring(0, charIndex - 1);
         charIndex--;
@@ -32,7 +38,7 @@ function typeEffect() {
 
 // Start typing effect on load
 document.addEventListener('DOMContentLoaded', () => {
-    if(words.length) setTimeout(typeEffect, 1000);
+    if (words.length) setTimeout(typeEffect, 1000);
 });
 
 
@@ -108,7 +114,7 @@ const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('show');
-            
+
             // If it's the skills section, animate progress bars
             if (entry.target.id === 'skills') {
                 const progressBars = document.querySelectorAll('.progress');
@@ -117,7 +123,7 @@ const observer = new IntersectionObserver((entries, observer) => {
                     bar.style.width = width;
                 });
             }
-            
+
             // Optional: Unobserve after animating once
             // observer.unobserve(entry.target); 
         }
@@ -142,20 +148,20 @@ window.addEventListener('scroll', () => {
 
 // Form submission handler (Visual only)
 const contactForm = document.getElementById('contactForm');
-if(contactForm) {
+if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const btn = contactForm.querySelector('button');
         const originalText = btn.innerHTML;
-        
+
         btn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
-        
+
         // Simulate network request
         setTimeout(() => {
             btn.innerHTML = 'Sent Successfully! <i class="fas fa-check"></i>';
             btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
             contactForm.reset();
-            
+
             setTimeout(() => {
                 btn.innerHTML = originalText;
                 btn.style.background = '';
@@ -167,19 +173,19 @@ if(contactForm) {
 // Project "Read More" / "Read Less" toggle interaction
 document.addEventListener('DOMContentLoaded', () => {
     const readMoreBtns = document.querySelectorAll('.read-more-btn');
-    
+
     readMoreBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             const card = btn.closest('.project-card');
             const moreContent = card.querySelector('.more-content');
             const isExpanded = moreContent.classList.contains('expanded');
-            
+
             if (isExpanded) {
                 // Collapse description
                 moreContent.classList.remove('expanded');
                 btn.innerHTML = 'Read More <i class="fas fa-chevron-down"></i>';
                 btn.setAttribute('aria-expanded', 'false');
-                
+
                 // Smoothly adjust scroll position if card collapses out of view
                 const cardTop = card.getBoundingClientRect().top + window.scrollY;
                 if (window.scrollY > cardTop) {

@@ -954,6 +954,12 @@
     box-shadow: 0 5px 15px var(--accent-purple-glow);
 }
 
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
 .contact-form {
     display: flex;
     flex-direction: column;
